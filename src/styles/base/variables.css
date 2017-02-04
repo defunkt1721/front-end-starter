@@ -1,0 +1,17 @@
+:root {
+  --theme-base1: #fcfcfc;
+  --theme-base2: #3e3ee3;
+  
+  /* Base colors (w/ defaults) */
+  --theme-bg:     var(--theme-base1, #fff);
+  --theme-accent: var(--theme-base2, blue);
+
+  /* Computed colors */
+  --theme-fg:     color(var(--theme-bg) contrast(50%));
+  --theme-muted:  color(var(--theme-fg) blend(var(--theme-bg) 50%));
+  --theme-alt1:   color(var(--theme-accent) hue(+ 60deg));
+  --theme-alt2:   color(var(--theme-alt1) hue(+ 60deg));
+  --theme-alt3:   color(var(--theme-alt2) hue(+ 60deg));
+  --theme-alt4:   color(var(--theme-alt3) hue(+ 60deg));
+  --theme-alt5:   color(var(--theme-alt4) hue(+ 60deg));
+}

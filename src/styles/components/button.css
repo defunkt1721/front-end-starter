@@ -1,0 +1,6 @@
+@import '../base/base.css';
+
+button {
+    background: gray;
+    font-size: 20px;
+}

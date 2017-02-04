@@ -1,0 +1,11 @@
+@import './base/base.css';
+
+body{
+  background: var(--theme-bg);
+}
+
+pre {
+  color: var(--theme-accent);
+  padding: 20px;
+  margin: 50px;
+}
