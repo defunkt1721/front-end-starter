@@ -1,7 +1,8 @@
-- var projects = [{title: 'Project 1',description: 'Description 1'},{title: 'Project 1',description: 'Description 1'}]
-
-- var values = ['one', 'two', 'three'];
+- var projects = [{title: 'Project 1',description: 'Description 1'},{title: 'Project 2',description: 'Description 2'}]
 
 ul
-  each val in values.length ? values : ['There are no values']
-    li= val
+    each val in projects
+        li= val.title
+            p= val.description
+    else
+        li There are no values

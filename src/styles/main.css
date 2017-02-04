@@ -1,7 +1,7 @@
 @import './base/base.css';
 
 body{
-  background: var(--theme-bg);
+  background: var(--theme-alt1);
 }
 
 pre {
