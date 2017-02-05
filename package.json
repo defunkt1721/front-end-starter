@@ -2,7 +2,6 @@
   "name": "front-end-starter",
   "version": "1.0.0",
   "description": "A starting point for front end builds, using ES6, Pug and PostCSS",
-  "main": "index.js",
   "scripts": {
     "prebuild": "rm -rf ./dist",
     "build": "npm-run-all build:*",
