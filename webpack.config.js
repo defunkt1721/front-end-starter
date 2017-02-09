@@ -1,6 +1,7 @@
 const path = require('path');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 
 // webpack.config.js
 module.exports = {
@@ -14,7 +15,7 @@ module.exports = {
 
 			{
 				test: /\.pug$/,
-				include: path.resolve(__dirname, 'src'),
+				// include: path.resolve(__dirname, 'src'),
 				loaders: ['pug-loader?pretty']
 			},
 
@@ -31,7 +32,7 @@ module.exports = {
 
 			{
 				test: /\.js$/,
-				include: path.resolve(__dirname, 'src'),
+				// include: path.resolve(__dirname, 'src'),
 				use: [{
 					loader: 'babel-loader',
 					options: {
@@ -40,6 +41,11 @@ module.exports = {
 						]
 					}
 				}]
+			},
+
+			{
+				test: /\.(ttf|eot|woff|woff2|svg|png|jpg|jpeg)$/,
+				loader: "url-loader?limit=100000&name=static/[name].[ext]"
 			}
 
 		]
@@ -56,6 +62,16 @@ module.exports = {
 			filename: 'index.html',
 			template: './index.pug'
 		}),
+		new BrowserSyncPlugin(
+			{
+				host: 'localhost',
+				port: 3000,
+				proxy: 'http://localhost:8080/'
+			},
+			{
+				reload: false
+			}
+		)
 	],
 
 	devServer: {
